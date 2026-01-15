@@ -1,0 +1,28 @@
+[2026-01-13T01:18:40.153Z] Auth API POST: http://localhost:3000/api/auth/sign-in/email
+[2026-01-13T01:18:40.174Z] Auth API POST Response Status: 403
+[2026-01-13T01:18:40.175Z] Auth API Error Body: {"code":"INVALID_ORIGIN","message":"Invalid origin"}
+[2026-01-13T01:20:46.754Z] Auth API POST: http://localhost:3000/api/auth/sign-in/email
+[2026-01-13T01:20:46.762Z] Auth API POST Response Status: 403
+[2026-01-13T01:20:46.763Z] Auth API Error Body: {"code":"INVALID_ORIGIN","message":"Invalid origin"}
+[2026-01-13T01:21:48.205Z] Auth API POST: http://localhost:3000/api/auth/sign-in/email
+[2026-01-13T01:21:48.212Z] Auth API POST Response Status: 403
+[2026-01-13T01:21:48.213Z] Auth API Error Body: {"code":"INVALID_ORIGIN","message":"Invalid origin"}
+[2026-01-13T01:24:46.322Z] Auth API GET: http://localhost:3000/api/auth/csrf
+[2026-01-13T01:28:09.952Z] Auth API POST: http://localhost:3000/api/auth/sign-in/email
+[2026-01-13T01:28:09.959Z] Auth API POST Response Status: 403
+[2026-01-13T01:28:09.960Z] Auth API Error Body: {"code":"INVALID_ORIGIN","message":"Invalid origin"}
+[2026-01-13T01:42:52.301Z] Auth API POST: http://localhost:3000/api/auth/sign-in/email
+[2026-01-13T01:42:52.487Z] Auth API POST Response Status: 401
+[2026-01-13T01:42:52.488Z] Auth API Error Body: {"code":"INVALID_EMAIL_OR_PASSWORD","message":"Invalid email or password"}
+[2026-01-13T01:51:57.859Z] Auth API POST: http://localhost:3000/api/auth/sign-in/email
+[2026-01-13T01:51:58.003Z] Auth API POST Response Status: 401
+[2026-01-13T01:51:58.004Z] Auth API Error Body: {"code":"INVALID_EMAIL_OR_PASSWORD","message":"Invalid email or password"}
+[2026-01-13T01:52:08.945Z] Auth API POST: http://localhost:3000/api/auth/sign-in/email
+[2026-01-13T01:52:09.067Z] Auth API POST Response Status: 401
+[2026-01-13T01:52:09.068Z] Auth API Error Body: {"code":"INVALID_EMAIL_OR_PASSWORD","message":"Invalid email or password"}
+[2026-01-13T01:54:09.451Z] Auth API POST: http://localhost:3000/api/auth/sign-in/email
+[2026-01-13T01:54:09.461Z] Auth API POST Response Status: 401
+[2026-01-13T01:54:09.462Z] Auth API Error Body: {"code":"INVALID_EMAIL_OR_PASSWORD","message":"Invalid email or password"}
+[2026-01-13T01:54:15.595Z] Auth API POST: http://localhost:3000/api/auth/sign-in/email
+[2026-01-13T01:54:15.604Z] Auth API POST Response Status: 401
+[2026-01-13T01:54:15.605Z] Auth API Error Body: {"code":"INVALID_EMAIL_OR_PASSWORD","message":"Invalid email or password"}
