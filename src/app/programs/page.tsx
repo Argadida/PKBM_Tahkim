@@ -110,7 +110,16 @@ export default function ProgramsOverview() {
                         animate={{ opacity: 1, y: 0 }}
                         className="max-w-3xl mx-auto"
                     >
-                        <span className="text-emerald-600 font-bold uppercase tracking-widest text-sm mb-4 block">PKBM MATSIL</span>
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.2, duration: 0.5 }}
+                            className="inline-flex items-center gap-2 py-1 px-10 rounded-full bg-emerald-500/10 backdrop-blur-md text-emerald-400 text-sm font-medium mb-5 border border-emerald-500/20 shadow-sm"
+                        >
+                            <Sparkles className="w-4 h-4 text-emerald-400" />
+                            <span className="text-base">PKBM MATSIL</span>
+                        </motion.div>
+                        {/* <span className="text-emerald-600 font-bold uppercase tracking-widest text-sm mb-4 block">PKBM MATSIL</span> */}
                         <h1 className="text-4xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
                             Program Pendidikan <br className="hidden md:block" />
                             <span className="text-emerald-600">Berkualitas & Beradab</span>
@@ -202,7 +211,7 @@ export default function ProgramsOverview() {
                         <p className="text-slate-600 italic">"Ilmu tanpa adab seperti api tanpa kayu bakar, sedangkan adab tanpa ilmu seperti ruh tanpa jasad."</p>
                         <div className="pt-4">
                             <Link
-                                href="/#contact"
+                                href="https://wa.me/081367286280"
                                 className="inline-flex items-center gap-2 bg-slate-900 text-white px-10 py-5 rounded-full font-bold hover:bg-slate-800 transition-all shadow-xl"
                             >
                                 Daftar Sekarang Melalui WhatsApp

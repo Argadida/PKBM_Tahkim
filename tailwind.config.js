@@ -26,7 +26,7 @@ module.exports = {
                 foreground: "#1F2937",
             },
             fontFamily: {
-                sans: ['var(--font-inter)', 'sans-serif'],
+                sans: ['var(--font-poppins)', 'Poppins', 'sans-serif'],
             },
             keyframes: {
                 'gradient-x': {

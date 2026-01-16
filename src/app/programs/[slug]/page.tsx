@@ -210,7 +210,9 @@ export default function ProgramDetail({ params }: { params: Promise<{ slug: stri
                                     whileTap={{ scale: 0.98 }}
                                 >
                                     <Link
-                                        href="/#contact"
+                                        href="https://ppdb.tahkimussunnah.com/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="w-full mt-10 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-emerald-900/20"
                                     >
                                         Daftar Sekarang

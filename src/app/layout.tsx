@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const poppins = Poppins({
+    subsets: ["latin"],
+    variable: "--font-poppins",
+    weight: ["300", "400", "500", "600", "700", "800"]
+});
 
 export const metadata: Metadata = {
     title: "PKBM MATSIL",
+    icons: {
+        icon: "/logo.png",
+    },
     description: "Berkarya Berbakti Dan Peduli",
 };
 
@@ -19,7 +26,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="id">
-            <body className={cn(inter.variable, "font-sans antialiased bg-background text-foreground")}>
+            <body className={cn(poppins.variable, "font-sans antialiased bg-background text-foreground")}>
                 {children}
                 <BackToHome />
             </body>
