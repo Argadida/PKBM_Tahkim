@@ -6,10 +6,16 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const backgroundImages = [
-  "/hero_islamic_education_1768183350013.png",
-  "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2070&auto=format&fit=crop"
+  "/photo1.jpeg",
+  "/paud1.jpeg",
+  "/photo2.jpeg",
+  "/paud2.jpeg",
+  "/photo3.jpeg",
+  "/paud3.jpeg",
+  "/photo5.jpeg",
+  "/photo6.jpeg",
+  "/photo7.jpeg",
+  "/photo8.jpeg",
 ];
 
 const SLIDE_DURATION = 2000; // maksimal 2 detik

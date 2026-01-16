@@ -28,7 +28,7 @@ const programData = {
             location: "Belakang Gedung Ma'had Tahkimussunnah Al-islamy",
             curriculum: "Kurikulum Merdeka Berbasis Pesantren"
         },
-        image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1200"
+        image: "/paud3.jpeg"
     },
     "paket-c": {
         title: "Paket C (Setara SMA)",

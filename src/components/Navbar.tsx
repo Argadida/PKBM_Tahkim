@@ -41,10 +41,10 @@ const Navbar = () => {
                         <img
                             src="/logo.png"
                             alt="PKBM MATSIL Logo"
-                            className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                            className="w-full h-full object-contain"
                         />
                     </div>
-                    <div className="flex flex-col leading-tight">
+                    <div className="flex leading-tight space-x-1">
                         <span className="text-emerald-600">PKBM</span>
                         <span className="text-slate-700">MATSIL</span>
                     </div>
@@ -52,16 +52,31 @@ const Navbar = () => {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-8">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors"
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
-                    <Link href="#register" className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all shadow-sm hover:shadow-emerald-100 ring-offset-2 focus:ring-2 ring-emerald-500">
+                    {navLinks.map((link) => {
+                        // Only highlight "Beranda" when on home page
+                        const isActive = link.href === "/" && pathname === "/";
+
+                        return (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className={cn(
+                                    "text-sm font-medium transition-colors",
+                                    isActive
+                                        ? "text-emerald-600"
+                                        : "text-slate-600 hover:text-emerald-600"
+                                )}
+                            >
+                                {link.name}
+                            </Link>
+                        );
+                    })}
+                    <Link
+                        href="https://ppdb.tahkimussunnah.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all shadow-sm hover:shadow-emerald-100 ring-offset-2 focus:ring-2 ring-emerald-500"
+                    >
                         Daftar Sekarang
                     </Link>
                 </div>
@@ -78,19 +93,31 @@ const Navbar = () => {
             {/* Mobile Menu Dropdown */}
             {isOpen && (
                 <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-100 shadow-lg p-4 flex flex-col gap-2 animate-in slide-in-from-top-2">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            className="text-sm font-medium p-3 text-slate-600 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition-colors"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
+                    {navLinks.map((link) => {
+                        // Only highlight "Beranda" when on home page
+                        const isActive = link.href === "/" && pathname === "/";
+
+                        return (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className={cn(
+                                    "text-sm font-medium p-3 rounded-lg transition-colors",
+                                    isActive
+                                        ? "bg-emerald-50 text-emerald-600"
+                                        : "text-slate-600 hover:bg-emerald-50 hover:text-emerald-600"
+                                )}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {link.name}
+                            </Link>
+                        );
+                    })}
                     <div className="pt-2">
                         <Link
-                            href="#register"
+                            href="https://ppdb.tahkimussunnah.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="block w-full text-center bg-emerald-500 hover:bg-emerald-600 text-white font-medium py-3 rounded-xl transition-colors"
                             onClick={() => setIsOpen(false)}
                         >

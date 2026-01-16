@@ -80,9 +80,9 @@ const CurriculumSection = () => (
                         </div>
                         <div className="space-y-4">
                             <div className="bg-emerald-500 p-6 rounded-3xl text-white">
-                                <Users className="w-10 h-10 text-white/80 mb-4" />
+                                <Users className="w-10 h-10 mb-4" />
                                 <h4 className="font-bold mb-2">Komunitas Salih</h4>
-                                <p className="text-sm text-white/80">Lingkungan yang mendukung tumbuh kembang karakter positif.</p>
+                                <p className="text-sm">Lingkungan yang mendukung tumbuh kembang karakter positif.</p>
                             </div>
                             <div className="bg-slate-800 p-6 rounded-3xl border border-slate-700">
                                 <ShieldCheck className="w-10 h-10 text-blue-400 mb-4" />
@@ -136,7 +136,7 @@ export default function ProgramsOverview() {
                                 <div className="bg-white rounded-[2.5rem] border border-slate-100 shadow-sm transition-all duration-500 overflow-hidden hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-100 grid grid-cols-1 lg:grid-cols-12 relative">
                                     {/* Icon & Title Area */}
                                     <div className="lg:col-span-4 p-10 lg:p-12 border-b lg:border-b-0 lg:border-r border-slate-50 flex flex-col justify-center items-center lg:items-start text-center lg:text-left transition-colors group-hover:bg-slate-50/50">
-                                        <div className={`w-20 h-20 rounded-3xl flex items-center justify-center mb-8 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 ${program.slug === 'paud' ? 'bg-blue-500' : 'bg-rose-500'} text-white`}>
+                                        <div className={`w-20 h-20 rounded-3xl flex items-center justify-center mb-8 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 ${program.slug === 'paud' ? 'bg-emerald-500' : 'bg-rose-500'} text-white`}>
                                             <program.icon className="w-10 h-10" />
                                         </div>
                                         <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4 group-hover:text-emerald-700 transition-colors">
