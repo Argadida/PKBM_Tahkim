@@ -8,6 +8,8 @@ import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import { getPublicMessages } from "@/app/actions/contact";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
     const publicMessages = await getPublicMessages();
 
