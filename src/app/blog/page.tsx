@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowRight, Calendar, User } from "lucide-react";
 
-export const revalidate = 60; // Revalidate every minute
+export const dynamic = "force-dynamic";
 
 export default async function BlogPage() {
     const posts = await getPosts();
