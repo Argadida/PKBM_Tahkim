@@ -10,10 +10,10 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-    title: "PKBM MATSIL",
     icons: {
         icon: "/logo.png",
     },
+    title: "PKBM MATSIL",
     description: "Berkarya Berbakti Dan Peduli",
 };
 

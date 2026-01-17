@@ -44,7 +44,7 @@ export default function SignUp() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-slate-50">
+        <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-slate-50 text-black">
             {/* Background Pattern */}
             <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
                 style={{
@@ -63,10 +63,7 @@ export default function SignUp() {
                     className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl border border-white/50 p-8 space-y-8"
                 >
                     <div className="text-center space-y-2">
-                        <Link href="/" className="inline-flex items-center text-sm text-slate-500 hover:text-emerald-600 transition-colors mb-4">
-                            <ArrowLeft className="w-4 h-4 mr-1" />
-                            Back to Home
-                        </Link>
+                        <img src="/logo.png" alt="Logo" className="w-24 h-24 mx-auto" />
                         <h2 className="text-3xl font-bold tracking-tight text-slate-900">
                             Create Account
                         </h2>

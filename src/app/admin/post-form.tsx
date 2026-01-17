@@ -41,8 +41,8 @@ export default function PostForm({ post, isEditing = false }: PostFormProps) {
             return;
         }
 
-        if (file.size > 5 * 1024 * 1024) {
-            setError("File size should be less than 5MB");
+        if (file.size > 1 * 1024 * 1024) {
+            setError("File size should be less than 1MB");
             return;
         }
 
@@ -248,7 +248,7 @@ export default function PostForm({ post, isEditing = false }: PostFormProps) {
                                             {uploading ? "Uploading..." : "Click to upload image"}
                                         </p>
                                         <p className="text-xs text-slate-500 mt-1">
-                                            PNG, JPG or WEBP (Max 5MB)
+                                            PNG, JPG or WEBP (Max 1MB)
                                         </p>
                                     </div>
                                 </button>

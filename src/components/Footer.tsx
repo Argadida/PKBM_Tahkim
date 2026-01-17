@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Instagram, Mail, MapPin, Phone, GraduationCap } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Phone, GraduationCap, Youtube } from "lucide-react";
 
 const Footer = () => {
     return (
@@ -30,8 +30,11 @@ const Footer = () => {
                             <Link href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-all duration-300">
                                 <Facebook className="w-4 h-4" />
                             </Link>
-                            <Link href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-all duration-300">
+                            <Link href="https://www.instagram.com/matsil_tv/" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-all duration-300">
                                 <Instagram className="w-4 h-4" />
+                            </Link>
+                            <Link href="https://www.youtube.com/@MatsilTV" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-all duration-300">
+                                <Youtube className="w-4 h-4" />
                             </Link>
                         </div>
                     </div>

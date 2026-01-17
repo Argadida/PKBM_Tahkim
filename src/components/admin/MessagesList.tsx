@@ -109,7 +109,7 @@ export default function MessagesList({ messages }: { messages: Message[] }) {
                                     </p>
                                 </div>
 
-                                <div className="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div className="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity mt-7">
                                     <button
                                         onClick={(e) => handleDelete(e, msg.id)}
                                         className="p-1.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-md transition-colors"
