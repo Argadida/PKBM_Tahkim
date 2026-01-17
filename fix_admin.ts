@@ -9,7 +9,7 @@ async function fixAdmin() {
     const password = "admin123";
 
     console.log("Checking admin user...");
-    const adminUser = await db.select().from(user).where(eq(user.email, email)).get();
+    const [adminUser] = await db.select().from(user).where(eq(user.email, email));
 
     if (!adminUser) {
         console.log("Admin user not found, nothing to fix.");

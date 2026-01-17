@@ -5,7 +5,7 @@ import { eq } from "drizzle-orm";
 async function seedBlog() {
     try {
         console.log("Finding admin user...");
-        const adminUser = await db.select().from(user).where(eq(user.email, "admin@pkbmmatsil.com")).get();
+        const [adminUser] = await db.select().from(user).where(eq(user.email, "admin@pkbmmatsil.com"));
 
         if (!adminUser) {
             console.error("❌ Admin user not found. Please run 'npm run create-admin' first.");

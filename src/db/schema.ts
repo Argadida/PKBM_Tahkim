@@ -1,49 +1,49 @@
-import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
+import { pgTable, text, integer, timestamp, boolean, serial } from "drizzle-orm/pg-core";
 
-export const messages = sqliteTable("messages", {
-    id: integer("id").primaryKey({ autoIncrement: true }),
+export const messages = pgTable("messages", {
+    id: serial("id").primaryKey(),
     name: text("name").notNull(),
-    email: text("email"), // Optional now if we use phone
+    email: text("email"),
     phone: text("phone"),
     program: text("program"),
     message: text("message").notNull(),
     reply: text("reply"),
     status: text("status").default("pending"),
-    createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
+    createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const registrations = sqliteTable("registrations", {
-    id: integer("id").primaryKey(),
+export const registrations = pgTable("registrations", {
+    id: serial("id").primaryKey(),
     fullName: text("full_name").notNull(),
     program: text("program").notNull(),
     phoneNumber: text("phone_number").notNull(),
     status: text("status").default("pending"),
-    createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
+    createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const user = sqliteTable("user", {
+export const user = pgTable("user", {
     id: text("id").primaryKey(),
     name: text("name").notNull(),
     email: text("email").notNull().unique(),
-    emailVerified: integer("emailVerified", { mode: "boolean" }).notNull(),
+    emailVerified: boolean("emailVerified").notNull(),
     image: text("image"),
     password: text("password"),
-    createdAt: integer("createdAt", { mode: "timestamp" }).notNull(),
-    updatedAt: integer("updatedAt", { mode: "timestamp" }).notNull()
+    createdAt: timestamp("createdAt").notNull(),
+    updatedAt: timestamp("updatedAt").notNull()
 });
 
-export const session = sqliteTable("session", {
+export const session = pgTable("session", {
     id: text("id").primaryKey(),
-    expiresAt: integer("expiresAt", { mode: "timestamp" }).notNull(),
+    expiresAt: timestamp("expiresAt").notNull(),
     token: text("token").notNull().unique(),
     ipAddress: text("ipAddress"),
     userAgent: text("userAgent"),
     userId: text("userId").notNull().references(() => user.id),
-    createdAt: integer("createdAt", { mode: "timestamp" }).notNull(),
-    updatedAt: integer("updatedAt", { mode: "timestamp" }).notNull()
+    createdAt: timestamp("createdAt").notNull(),
+    updatedAt: timestamp("updatedAt").notNull()
 });
 
-export const account = sqliteTable("account", {
+export const account = pgTable("account", {
     id: text("id").primaryKey(),
     accountId: text("accountId").notNull(),
     providerId: text("providerId").notNull(),
@@ -51,32 +51,32 @@ export const account = sqliteTable("account", {
     accessToken: text("accessToken"),
     refreshToken: text("refreshToken"),
     idToken: text("idToken"),
-    accessTokenExpiresAt: integer("accessTokenExpiresAt", { mode: "timestamp" }),
-    refreshTokenExpiresAt: integer("refreshTokenExpiresAt", { mode: "timestamp" }),
+    accessTokenExpiresAt: timestamp("accessTokenExpiresAt"),
+    refreshTokenExpiresAt: timestamp("refreshTokenExpiresAt"),
     scope: text("scope"),
     password: text("password"),
-    createdAt: integer("createdAt", { mode: "timestamp" }).notNull(),
-    updatedAt: integer("updatedAt", { mode: "timestamp" }).notNull()
+    createdAt: timestamp("createdAt").notNull(),
+    updatedAt: timestamp("updatedAt").notNull()
 });
 
-export const verification = sqliteTable("verification", {
+export const verification = pgTable("verification", {
     id: text("id").primaryKey(),
     identifier: text("identifier").notNull(),
     value: text("value").notNull(),
-    expiresAt: integer("expiresAt", { mode: "timestamp" }).notNull(),
-    createdAt: integer("createdAt", { mode: "timestamp" }),
-    updatedAt: integer("updatedAt", { mode: "timestamp" })
+    expiresAt: timestamp("expiresAt").notNull(),
+    createdAt: timestamp("createdAt"),
+    updatedAt: timestamp("updatedAt")
 });
 
-export const posts = sqliteTable("posts", {
-    id: integer("id").primaryKey({ autoIncrement: true }),
+export const posts = pgTable("posts", {
+    id: serial("id").primaryKey(),
     title: text("title").notNull(),
     slug: text("slug").notNull().unique(),
     content: text("content").notNull(),
     excerpt: text("excerpt"),
     coverImage: text("cover_image"),
-    published: integer("published", { mode: "boolean" }).default(false),
+    published: boolean("published").default(false),
     authorId: text("author_id").references(() => user.id),
-    createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
-    updatedAt: integer("updated_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
+    createdAt: timestamp("created_at").defaultNow(),
+    updatedAt: timestamp("updated_at").defaultNow(),
 });
