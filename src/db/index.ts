@@ -9,3 +9,4 @@ if (!dbUrl) {
 }
 
 const sql = neon(dbUrl);
+export const db = drizzle(sql, { schema });
