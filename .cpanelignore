@@ -1,0 +1,59 @@
+# Files dan folder yang tidak perlu di-upload ke cPanel
+
+# Dependencies
+node_modules/
+
+# Build output (akan di-generate di server)
+.next/
+
+# Git
+.git/
+.gitignore
+
+# Environment files (upload manual dengan konfigurasi production)
+.env
+.env.local
+.env.development
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+auth_debug.log
+build_log.txt
+
+# Testing
+.coverage/
+coverage/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Scripts development
+check_accounts.ts
+check_users.ts
+fix_admin.ts
+
+# TypeScript build info
+tsconfig.tsbuildinfo
+
+# Local database (upload terpisah atau buat baru di server)
+sqlite.db
+*.db-journal
+
+# Deployment scripts (tidak perlu di server)
+deploy.sh
