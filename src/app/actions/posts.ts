@@ -1,5 +1,5 @@
 "use server";
-
+export const runtime = "nodejs";
 import { db } from "@/lib/db";
 import { posts } from "@/db/schema";
 import { eq, desc } from "drizzle-orm";
