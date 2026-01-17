@@ -15,4 +15,6 @@ export const auth = betterAuth({
     emailAndPassword: {
         enabled: true,
     },
+
 });
+console.log("SECRET:", process.env.BETTER_AUTH_SECRET);
