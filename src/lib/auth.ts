@@ -18,4 +18,3 @@ export const auth = betterAuth({
     },
 
 });
-console.log("SECRET:", process.env.BETTER_AUTH_SECRET);
