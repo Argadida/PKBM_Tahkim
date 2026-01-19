@@ -9,7 +9,8 @@ export const auth = betterAuth({
     trustedOrigins: [
         "https://pkbm-tahkim.vercel.app",
         "https://pkbm-matsil.vercel.app",
-        "http://localhost:3000"
+        "http://localhost:3000",
+        ...(process.env.VERCEL_URL ? [`https://${process.env.VERCEL_URL}`] : []),
     ],
 
 
