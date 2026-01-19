@@ -2,11 +2,11 @@
   "name": "pkbm-web",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://pkbm.tahkimussunnah.com/",
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
-    "start:prod": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production node server.js",
     "lint": "eslint",
     "create-admin": "tsx scripts/create-admin.ts",
     "deploy:build": "npm run build && echo Build completed successfully!"
