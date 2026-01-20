@@ -1,12 +1,11 @@
-
 import { db } from "./src/lib/db";
 import { user, account } from "./src/db/schema";
-import { eq, and } from "drizzle-orm";
-import * as bcrypt from "bcryptjs";
+import { eq } from "drizzle-orm";
+import { hashPassword } from "better-auth/crypto";
 
 async function fixAdmin() {
     const email = "admin@pkbmmatsil.com";
-    const password = "admin123";
+    const plainPassword = "admin123";
 
     console.log("Checking admin user...");
     const [adminUser] = await db.select().from(user).where(eq(user.email, email));
@@ -18,17 +17,18 @@ async function fixAdmin() {
 
     console.log("Admin user found. ID:", adminUser.id);
 
-    // Delete any existing accounts for this user to start fresh
+    // Delete existing accounts for this user
     console.log("Cleaning up existing accounts...");
     await db.delete(account).where(eq(account.userId, adminUser.id));
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // Better Auth uses scrypt by default (hash:salt format often)
+    const hashedPassword = await hashPassword(plainPassword);
     const now = new Date();
 
-    console.log("Creating proper account entry...");
+    console.log("Creating proper account entry using Better Auth hash...");
     await db.insert(account).values({
-        id: crypto.randomUUID(), // Better Auth uses its own, but this should be fine
-        accountId: adminUser.id, // MUST match userId for credential provider in Better Auth 1.x usually
+        id: crypto.randomUUID(),
+        accountId: adminUser.id,
         providerId: "credential",
         userId: adminUser.id,
         password: hashedPassword,
@@ -36,17 +36,17 @@ async function fixAdmin() {
         updatedAt: now,
     });
 
-    // Set password to null in the user table to match Better Auth's behavior
     console.log("Updating user table...");
     await db.update(user)
         .set({
             password: null,
             emailVerified: true,
+            role: "admin",
             updatedAt: now,
         })
         .where(eq(user.id, adminUser.id));
 
-    console.log("✅ Admin account fixed!");
+    console.log("✅ Admin account fixed with compatible hash!");
     console.log("Email: admin@pkbmmatsil.com");
     console.log("Password: admin123");
 }

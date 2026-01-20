@@ -139,15 +139,6 @@ export default function SignIn() {
                             )}
                         </button>
                     </form>
-
-                    <div className="text-center">
-                        <p className="text-sm text-slate-600">
-                            Don't have an account?{" "}
-                            <Link href="/sign-up" className="font-semibold text-emerald-600 hover:text-emerald-500 transition-colors">
-                                Sign up
-                            </Link>
-                        </p>
-                    </div>
                 </motion.div>
             </div>
         </div>

@@ -20,6 +20,7 @@ export default function SignUp() {
         setLoading(true);
         setError("");
 
+
         try {
             await signUp.email({
                 email,

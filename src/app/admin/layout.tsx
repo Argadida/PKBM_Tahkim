@@ -3,7 +3,7 @@
 import { useSession, signOut } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Loader2, LayoutDashboard, FileText, LogOut, Plus, MessageSquare } from "lucide-react";
+import { Loader2, LayoutDashboard, FileText, LogOut, Plus, MessageSquare, UserPlus } from "lucide-react";
 import Link from "next/link";
 import { getPendingMessagesCount } from "@/app/actions/contact";
 
@@ -98,6 +98,13 @@ export default function AdminLayout({
                     >
                         <FileText className="h-5 w-5 mr-3" />
                         Live Blog
+                    </Link>
+                    <Link
+                        href="/sign-up"
+                        className="flex items-center px-4 py-2 text-gray-600 rounded-lg hover:bg-emerald-50 hover:text-emerald-600 transition-colors"
+                    >
+                        <UserPlus className="h-5 w-5 mr-3" />
+                        Tambah Admin
                     </Link>
                 </nav>
                 <div className="p-4 border-t border-gray-100">

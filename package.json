@@ -4,9 +4,9 @@
   "private": true,
   "homepage": "http://pkbm.tahkimussunnah.com/",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "node --env-file=.env server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production node --env-file=.env server.js",
     "lint": "eslint",
     "create-admin": "tsx scripts/create-admin.ts",
     "deploy:build": "npm run build && echo Build completed successfully!"
