@@ -10,6 +10,9 @@ export const auth = betterAuth({
         "https://pkbm-tahkim.vercel.app",
         "https://pkbm-matsil.vercel.app",
         "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://pkbm.tahkimussunnah.com",
+        "https://pkbm.tahkimussunnah.com",
         ...(process.env.VERCEL_URL ? [`https://${process.env.VERCEL_URL}`] : []),
     ],
 

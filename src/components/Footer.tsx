@@ -27,9 +27,6 @@ const Footer = () => {
                             Integrasi ilmu syar'i dan keterampilan modern untuk membentuk karakter yang beradab, cerdas, dan siap menghadapi masa depan.
                         </p>
                         <div className="flex items-center gap-4">
-                            <Link href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-all duration-300">
-                                <Facebook className="w-4 h-4" />
-                            </Link>
                             <Link href="https://www.instagram.com/matsil_tv/" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-all duration-300">
                                 <Instagram className="w-4 h-4" />
                             </Link>
@@ -83,11 +80,8 @@ const Footer = () => {
                     <p className="text-xs text-slate-500 text-center md:text-left">
                         © {new Date().getFullYear()} PKBM MATSIL. All rights reserved.
                     </p>
-                    <div className="flex gap-6 text-xs text-slate-500">
-                        <Link href="#" className="hover:text-emerald-500 transition-colors">Privacy Policy</Link>
-                        <Link href="#" className="hover:text-emerald-500 transition-colors">Terms of Service</Link>
-                    </div>
                 </div>
+
             </div>
         </footer>
     );
