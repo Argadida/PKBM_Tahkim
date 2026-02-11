@@ -10,12 +10,15 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-    title: "PKBM MATSIL",
-    description: "Berkarya Berbakti Dan Peduli",
-    icons: {
-        icon: "/logo.png",
-        apple: "/logo.png",
-    },
+  title: "PKBM MATSIL",
+  description: "Berkarya Berbakti Dan Peduli",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/logo.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/logo.png",
+  },
 };
 
 import BackToHome from "@/components/BackToHome";
